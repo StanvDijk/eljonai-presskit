@@ -3,41 +3,47 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>DJ Eljonai — Voltage V2</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#060606;--red:#e81919;--red2:rgba(232,25,25,.12);--w:#ffffff;--w2:#e0e0e0;--w3:#999999;--rule:rgba(255,255,255,.10)}
+:root{--bg:#060606;--red:#e81919;--red2:rgba(232,25,25,.14);--w:#ffffff;--w2:#e8e8e8;--w3:#aaaaaa;--rule:rgba(255,255,255,.12)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--w);font-family:'Space Mono',monospace;font-size:13px;line-height:1.7;overflow-x:hidden}
+body{background:var(--bg);color:var(--w);font-family:'Outfit',sans-serif;font-weight:400;font-size:14px;line-height:1.7;overflow-x:hidden}
 .wrap{max-width:1040px;margin:0 auto;padding:0 48px}
 section{padding:80px 0}
 body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px);pointer-events:none;z-index:9999}
 
-/* ── HERO — SPLIT LAYOUT ── */
-#hero{height:100vh;min-height:640px;display:grid;grid-template-columns:1fr 400px;overflow:hidden;position:relative}
-.h-left{display:flex;flex-direction:column;justify-content:space-between;padding:28px 48px;background:var(--bg);position:relative;z-index:2}
-.h-topbar{display:flex;justify-content:space-between;align-items:center}
-.h-topbar span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#cccccc}
-.h-name-block{flex:1;display:flex;flex-direction:column;justify-content:center}
-.h-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,12vw,168px);line-height:.85;letter-spacing:.02em;color:var(--w)}
-.h-name .mid{color:var(--bg);-webkit-text-stroke:1px var(--w)}
-.red-bar{width:100%;height:3px;background:var(--red);margin:18px 0;box-shadow:0 0 24px rgba(232,25,25,.5),0 0 60px rgba(232,25,25,.2)}
-.h-sub{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px}
-.h-sub-item{padding:11px 0;border-top:1px solid var(--rule)}
-.h-sub-item label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#ff5555;display:block;margin-bottom:4px}
-.h-sub-item span{font-size:13px;color:#ffffff}
+/* ── HERO — TRUE 50/50 PHOTO SPLIT ── */
+#hero{height:100vh;min-height:640px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative}
 
-/* RIGHT — DUAL PHOTO PANEL */
-.h-right{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-left:3px solid var(--red)}
-.h-photo{position:relative;overflow:hidden;background:#0a0808}
-.h-photo img{width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.05) brightness(.95);transition:transform .6s ease}
-.h-photo:hover img{transform:scale(1.03)}
-.h-photo::after{content:'';position:absolute;inset:0;background:rgba(232,25,25,.05)}
-.h-photo-label{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(to top,rgba(6,6,6,.88),transparent);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--w3)}
-.h-photo-num{position:absolute;top:10px;right:10px;font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:.12em;color:var(--red);border:1px solid rgba(232,25,25,.4);padding:2px 8px;background:rgba(6,6,6,.6)}
-.h-photo-divider{position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--red);opacity:.4}
+/* topbar over both photos */
+.h-topbar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;z-index:20;border-bottom:1px solid rgba(255,255,255,.12)}
+.h-topbar span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);font-weight:500}
 
-/* ── DIVIDER ── */
+/* red vertical divider */
+.h-divider{position:absolute;top:0;left:50%;width:3px;height:100%;background:var(--red);z-index:15;box-shadow:0 0 24px rgba(232,25,25,.6),0 0 60px rgba(232,25,25,.2)}
+
+/* left photo — name overlaid bottom-left */
+.h-photo-left{position:relative;overflow:hidden}
+.h-photo-left img{width:100%;height:100%;object-fit:cover;object-position:60% center;filter:brightness(.85) contrast(1.05)}
+.h-photo-left::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,6,.95) 0%,rgba(6,6,6,.5) 45%,transparent 75%)}
+.h-content{position:absolute;bottom:0;left:0;width:50%;padding:0 48px 48px;z-index:10}
+.h-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,10vw,148px);line-height:.86;letter-spacing:.02em;color:var(--w)}
+.h-name .mid{color:transparent;-webkit-text-stroke:2px var(--w)}
+.red-bar{width:100%;height:3px;background:var(--red);margin:16px 0 20px;box-shadow:0 0 20px rgba(232,25,25,.55)}
+.h-meta{display:flex;gap:0;flex-wrap:wrap}
+.h-mi{padding:8px 24px 8px 0;border-right:1px solid rgba(255,255,255,.15);margin-right:24px}
+.h-mi:last-child{border:none;margin:0}
+.h-mi label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:2px;font-weight:500}
+.h-mi span{font-size:13px;color:#ffffff;font-weight:400}
+
+/* right photo — clean, minimal overlay */
+.h-photo-right{position:relative;overflow:hidden}
+.h-photo-right img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.88) contrast(1.05)}
+.h-photo-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,6,.4) 0%,transparent 40%)}
+.h-photo-label{position:absolute;bottom:24px;right:24px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500}
+
+/* ── DIVIDER SECTIONS ── */
 .divider{display:flex;align-items:center;gap:0;border-top:1px solid var(--rule)}
 .div-num{font-family:'Bebas Neue',sans-serif;font-size:72px;color:var(--red);padding:0 48px;line-height:1;border-right:1px solid var(--rule);min-width:150px;text-align:center}
 .div-title{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--w);padding:0 40px;letter-spacing:.04em}
@@ -49,109 +55,103 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 /* ── BIO ── */
 #bio{padding:0 0 80px}
 .bio-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding:56px 0 0}
-.bio-text p{font-size:13px;line-height:1.85;color:var(--w2);margin-bottom:16px}
+.bio-text p{font-size:15px;line-height:1.85;color:var(--w2);margin-bottom:16px}
 .bio-text p:last-child{margin:0}
 .bio-text strong{color:var(--w)}
 .bio-big-q{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3.5vw,44px);line-height:1.1;color:var(--w);letter-spacing:.03em;border-left:3px solid var(--red);padding-left:24px;margin:32px 0}
 .stat-list{display:flex;flex-direction:column}
 .stat-li{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--rule)}
 .stat-li:first-child{border-top:1px solid var(--rule)}
-.stat-li .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--w3)}
+.stat-li .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#cccccc;font-weight:500}
 .stat-li .v{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--w);letter-spacing:.04em}
-.stat-li .v small{font-family:'Space Mono',monospace;font-size:11px;color:var(--w3);margin-left:4px}
-.genre-bar{margin-top:32px;display:flex;flex-wrap:wrap;gap:6px}
-.gtag{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);border:1px solid rgba(232,25,25,.3);padding:4px 12px}
+.stat-li .v small{font-family:'Outfit',sans-serif;font-size:12px;color:#999;margin-left:4px}
+.genre-bar{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px}
+.gtag{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#ffffff;background:rgba(232,25,25,.15);border:1px solid rgba(232,25,25,.45);padding:5px 14px}
 
 /* ── GIGS ── */
 #gigs{padding:0 0 80px}
 .gig-table{width:100%;border-collapse:collapse;margin-top:40px}
-.gig-table tr{border-bottom:1px solid var(--rule);cursor:default;transition:background .2s}
+.gig-table tr{border-bottom:1px solid var(--rule);transition:background .2s}
 .gig-table tr:first-child{border-top:1px solid var(--rule)}
 .gig-table tr:hover{background:rgba(232,25,25,.04)}
-.gig-table td{padding:18px 12px;font-size:12px;vertical-align:middle}
+.gig-table td{padding:18px 12px;vertical-align:middle}
 .gig-table td:first-child{padding-left:0;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--red);letter-spacing:.04em;width:160px}
-.gig-table td.venue{color:var(--w);font-size:13px}
-.gig-table td.city{color:var(--w3);font-size:11px;text-align:right;padding-right:0}
-.gbadge{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:rgba(232,25,25,.18);border:1px solid rgba(232,25,25,.5);color:#ffffff;padding:4px 12px}
+.gig-table td.venue{color:var(--w);font-size:14px}
+.gig-table td.city{color:#bbbbbb;font-size:13px;text-align:right;padding-right:0}
+.gbadge{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:rgba(232,25,25,.18);border:1px solid rgba(232,25,25,.5);color:#ffffff;padding:4px 12px;margin-right:6px}
 
 /* ── RIDER ── */
 #rider{padding:0 0 80px}
 .rider-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:40px}
-.r-head{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--red);display:flex;align-items:center;gap:12px}
-.r-head::before{content:'■';font-size:7px}
-.r-item{display:flex;gap:16px;padding:11px 0;border-bottom:1px solid var(--rule)}
+.r-head{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#ffffff;font-weight:600;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--red)}
+.r-item{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule)}
 .r-item:last-of-type{border:none}
-.r-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--red);min-width:24px;line-height:1.2}
-.r-txt{font-size:12px;color:var(--w2);line-height:1.6}
-.r-txt strong{color:var(--w);font-weight:700}
-.r-note{margin-top:16px;padding:14px 16px;border-left:2px solid var(--red);background:var(--red2);font-size:11px;color:var(--w3);font-style:italic}
+.r-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--red);min-width:28px;line-height:1.2}
+.r-txt{font-size:14px;color:var(--w2);line-height:1.6}
+.r-txt strong{color:var(--w);font-weight:600}
+.r-note{margin-top:16px;padding:14px 18px;border-left:3px solid var(--red);background:var(--red2);font-size:13px;color:#cccccc;font-style:italic}
 
 /* ── CONTACT ── */
 #contact{padding:0 0 80px}
 .contact-wrap{padding-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .contact-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,8vw,110px);line-height:.9;letter-spacing:.02em;color:var(--w);margin-bottom:16px}
 .contact-big em{color:var(--red);font-style:normal}
-.contact-sub{font-size:11px;color:var(--w3);line-height:1.7;max-width:280px}
+.contact-sub{font-size:14px;color:#aaaaaa;line-height:1.7;max-width:280px}
 .clink{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);text-decoration:none;transition:padding-left .2s}
 .clink:first-child{border-top:1px solid var(--rule)}
 .clink:hover{padding-left:10px}
 .clink:hover .cicon{border-color:var(--red);background:var(--red2)}
-.cicon{width:32px;height:32px;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
-.cicon svg{width:12px;height:12px;stroke:var(--w3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cicon{width:36px;height:36px;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.cicon svg{width:14px;height:14px;stroke:#888;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .clink:hover .cicon svg{stroke:var(--red)}
-.c-l{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--w3);margin-bottom:2px}
-.c-v{font-size:13px;color:var(--w)}
+.c-l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#999;margin-bottom:3px;font-weight:500}
+.c-v{font-size:14px;color:var(--w)}
 
 footer{padding:24px 0;border-top:1px solid var(--rule)}
-.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:10px;color:var(--w3);letter-spacing:.08em}
-.foot .logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em;color:var(--w)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:#666;letter-spacing:.06em}
+.foot .logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;color:var(--w)}
 
 @media(max-width:900px){
-  #hero{grid-template-columns:1fr;height:auto;min-height:100vh}
-  .h-right{height:45vw;border-left:none;border-top:3px solid var(--red)}
+  #hero{grid-template-columns:1fr;height:auto}
+  .h-photo-right{height:55vw}
+  .h-divider{display:none}
+  .h-photo-left{min-height:100vh}
+  .h-content{width:100%;padding:0 24px 40px}
+  .h-topbar{padding:20px 24px}
   .wrap{padding:0 24px}
   .bio-inner,.rider-cols,.contact-wrap{grid-template-columns:1fr;gap:40px}
-  .h-left{padding:24px}
-  .h-name{font-size:22vw}
 }
 </style>
 </head>
 <body>
 
 <section id="hero">
-  <div class="h-left">
-    <div class="h-topbar">
-      <span>DJ Eljonai — Press Kit 2026</span>
-      <span>Amsterdam · NL</span>
-    </div>
-    <div class="h-name-block">
-      <div class="h-name">
-        <div>EL</div>
-        <div class="mid">JO</div>
-        <div>NAI</div>
-      </div>
-      <div class="red-bar"></div>
-      <div class="h-sub">
-        <div class="h-sub-item"><label>Genre</label><span>Deep House / Organic</span></div>
-        <div class="h-sub-item"><label>Base</label><span>Amsterdam, NL</span></div>
-        <div class="h-sub-item"><label>Actief</label><span>2019 — heden</span></div>
-        <div class="h-sub-item"><label>Booking</label><span>booking@eljonai.com</span></div>
-      </div>
-    </div>
-    <div></div>
+  <div class="h-topbar">
+    <span>DJ Eljonai — Press Kit 2026</span>
+    <span>Amsterdam · NL</span>
+  </div>
+  <div class="h-divider"></div>
+
+  <div class="h-photo-left">
+    <img src="cover2.jpg" alt="Eljonai live — crowd energy">
   </div>
 
-  <div class="h-right">
-    <div class="h-photo">
-      <img src="cover2.jpg" alt="Eljonai live — crowd energy">
-      <div class="h-photo-num">01</div>
-      <div class="h-photo-label">Live @ Amsterdam — crowd energy</div>
-      <div class="h-photo-divider"></div>
+  <div class="h-photo-right">
+    <img src="cover3.jpg" alt="Eljonai — dancefloor view">
+    <div class="h-photo-label">Dancefloor view</div>
+  </div>
+
+  <div class="h-content">
+    <div class="h-name">
+      <div>EL</div>
+      <div class="mid">JO</div>
+      <div>NAI</div>
     </div>
-    <div class="h-photo">
-      <img src="cover3.jpg" alt="Eljonai live — dancefloor view" style="object-position:center top">
-      <div class="h-photo-num">02</div>
-      <div class="h-photo-label">Dancefloor view from the booth</div>
+    <div class="red-bar"></div>
+    <div class="h-meta">
+      <div class="h-mi"><label>Genre</label><span>Deep House / Organic</span></div>
+      <div class="h-mi"><label>Base</label><span>Amsterdam, NL</span></div>
+      <div class="h-mi"><label>Booking</label><span>booking@eljonai.com</span></div>
     </div>
   </div>
 </section>
@@ -168,8 +168,8 @@ footer{padding:24px 0;border-top:1px solid var(--rule)}
       </div>
       <div class="r" style="transition-delay:.12s">
         <div class="stat-list">
-          <div class="stat-li"><span class="k">Instagram</span><span class="v">18.4<small>K VOLGERS</small></span></div>
-          <div class="stat-li"><span class="k">SoundCloud</span><span class="v">9.2<small>K VOLGERS</small></span></div>
+          <div class="stat-li"><span class="k">Instagram</span><span class="v">18.4<small>K volgers</small></span></div>
+          <div class="stat-li"><span class="k">SoundCloud</span><span class="v">9.2<small>K volgers</small></span></div>
           <div class="stat-li"><span class="k">EP Streams</span><span class="v">120<small>K+</small></span></div>
           <div class="stat-li"><span class="k">ADE Edities</span><span class="v">2<small>×</small></span></div>
           <div class="stat-li"><span class="k">Label</span><span class="v" style="font-size:18px">BRAAM REC.</span></div>
@@ -208,8 +208,8 @@ footer{padding:24px 0;border-top:1px solid var(--rule)}
         <div class="r-item"><div class="r-num">01</div><div class="r-txt"><strong>2× CDJ-3000</strong> of gelijkwaardig (Pioneer-standaard)</div></div>
         <div class="r-item"><div class="r-num">02</div><div class="r-txt"><strong>1× DJM-900NXS2</strong> mixer</div></div>
         <div class="r-item"><div class="r-num">03</div><div class="r-txt"><strong>Monitor speaker</strong> op ooghoogte DJ booth</div></div>
-        <div class="r-item"><div class="r-num">04</div><div class="r-txt"><strong>Adequate monitoring</strong> volume, afgesteld vóór aanvang</div></div>
-        <div class="r-item"><div class="r-num">05</div><div class="r-txt"><strong>Stabiele wifi</strong> (optioneel, streaming/backstage)</div></div>
+        <div class="r-item"><div class="r-num">04</div><div class="r-txt"><strong>Adequate monitoring</strong>, afgesteld vóór aanvang</div></div>
+        <div class="r-item"><div class="r-num">05</div><div class="r-txt"><strong>Stabiele wifi</strong> (optioneel)</div></div>
         <div class="r-item"><div class="r-num">06</div><div class="r-txt"><strong>Goede verlichting</strong> op de booth</div></div>
         <div class="r-note">Afwijkingen minimaal 72 uur van tevoren bespreken met booking.</div>
       </div>
@@ -239,7 +239,7 @@ footer{padding:24px 0;border-top:1px solid var(--rule)}
       <div class="r" style="transition-delay:.12s">
         <a class="clink" href="mailto:booking@eljonai.com"><div class="cicon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div><div><div class="c-l">Booking E-mail</div><div class="c-v">booking@eljonai.com</div></div></a>
         <a class="clink" href="tel:+31612345678"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.18 19.79 19.79 0 01.21 5.5a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 11a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="c-l">Telefoon</div><div class="c-v">+31 6 12 34 56 78</div></div></a>
-        <a class="clink" href="#"><div class="cicon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="#999" stroke="none"/></svg></div><div><div class="c-l">Instagram</div><div class="c-v">@eljonai · 18.4K</div></div></a>
+        <a class="clink" href="#"><div class="cicon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="#888" stroke="none"/></svg></div><div><div class="c-l">Instagram</div><div class="c-v">@eljonai · 18.4K</div></div></a>
         <a class="clink" href="#"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M3 15.5a2.5 2.5 0 005 0V8a1 1 0 011-1 7 7 0 017 7v1.5"/></svg></div><div><div class="c-l">SoundCloud</div><div class="c-v">/eljonai · 9.2K</div></div></a>
         <a class="clink" href="#"><div class="cicon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div><div class="c-l">Resident Advisor</div><div class="c-v">ra.co/eljonai</div></div></a>
       </div>
