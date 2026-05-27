@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DJ Eljonai — Luxe</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2ece1;--bg2:#ede7db;--bg3:#e5ddd0;--ink:#1a1714;--ink2:#4a453d;--ink3:#8a847a;--terra:#a8452e;--terra2:rgba(168,69,46,.12);--rule:rgba(26,23,20,.1);--ruleT:rgba(168,69,46,.2)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink2);font-family:'Jost',sans-serif;font-weight:300;font-size:15px;line-height:1.75;overflow-x:hidden}
+.w{max-width:1040px;margin:0 auto;padding:0 52px}
+section{padding:88px 0}
+
+/* ── REVEAL ── */
+.r{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.r.on{opacity:1;transform:none}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;padding:0;background:linear-gradient(to bottom,rgba(242,236,225,.15) 0%,rgba(242,236,225,.55) 55%,rgba(242,236,225,1) 100%),url('cover.jpg') center 20%/cover no-repeat}
+.h-top{position:absolute;top:0;left:0;right:0;padding:28px 52px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule);z-index:5}
+.h-top span{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3)}
+.h-bg-text{position:absolute;bottom:-0.1em;right:-0.03em;font-family:'Playfair Display',serif;font-size:clamp(220px,28vw,420px);font-style:italic;font-weight:400;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(168,69,46,.06);user-select:none;pointer-events:none}
+.h-content{position:relative;z-index:3;padding:0 52px 72px}
+.h-line{width:44px;height:1px;background:var(--terra);margin-bottom:20px}
+.h-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--terra);margin-bottom:24px}
+.h-name{font-family:'Playfair Display',serif;font-size:clamp(64px,10vw,144px);font-style:italic;font-weight:400;line-height:.9;letter-spacing:-.01em;color:var(--ink);margin-bottom:28px}
+.h-tag{font-size:17px;font-weight:300;color:var(--ink3);max-width:420px;line-height:1.55;margin-bottom:44px;font-style:italic;font-family:'Playfair Display',serif}
+.h-meta{display:flex;gap:0;flex-wrap:wrap;border-top:1px solid var(--rule)}
+.h-mi{padding:18px 40px 18px 0;border-right:1px solid var(--rule);margin-right:40px}
+.h-mi:last-child{border:none;margin:0}
+.h-mi label{display:block;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3);margin-bottom:4px}
+.h-mi span{font-size:14px;color:var(--ink)}
+.h-scroll{position:absolute;bottom:32px;right:52px;writing-mode:vertical-rl;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3);display:flex;align-items:center;gap:10px;animation:pulse 3s ease-in-out infinite}
+.h-scroll::after{content:'';width:1px;height:40px;background:linear-gradient(to bottom,var(--terra),transparent)}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:.85}}
+
+/* ── SECTION HEAD ── */
+.sh{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-bottom:56px}
+.sh-n{font-family:'Playfair Display',serif;font-size:11px;font-style:italic;color:var(--terra);letter-spacing:.06em}
+.sh-t{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,48px);font-weight:400;font-style:italic;color:var(--ink);line-height:1.05}
+.sh-rule{height:1px;background:var(--rule);margin:24px 0}
+
+/* ── BIO ── */
+#bio{background:var(--bg)}
+.bio-g{display:grid;grid-template-columns:3fr 2fr;gap:72px;align-items:start}
+.bio-p{font-size:16px;line-height:1.9;color:var(--ink2);margin-bottom:20px}
+.bio-p:last-of-type{margin:0}
+.bio-q{font-family:'Playfair Display',serif;font-size:clamp(19px,2.4vw,27px);font-style:italic;font-weight:300;line-height:1.45;color:var(--ink);margin:36px 0;padding-left:20px;border-left:2px solid var(--terra)}
+.sidebar{}
+.s-box{background:var(--bg2);padding:32px;margin-bottom:20px}
+.s-box-title{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--ruleT)}
+.s-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)}
+.s-row:last-child{border:none;padding-bottom:0}
+.s-row label{font-size:10px;color:var(--ink3)}
+.s-row span{font-family:'Playfair Display',serif;font-size:20px;color:var(--ink)}
+.s-row span small{font-size:12px;color:var(--ink3);margin-left:3px;font-family:'Jost',sans-serif}
+.genres-wrap{margin-top:0}
+.genres-title{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin-bottom:14px}
+.gtags{display:flex;flex-wrap:wrap;gap:7px}
+.gtag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);border:1px solid var(--ruleT);padding:5px 14px;background:transparent;transition:background .2s}
+.gtag:hover{background:var(--terra2)}
+
+/* ── GIGS ── */
+#gigs{background:var(--bg2)}
+.gig-list{}
+.gig-row{display:grid;grid-template-columns:130px 1fr auto;align-items:center;gap:24px;padding:20px 0;border-bottom:1px solid var(--rule);transition:padding-left .22s}
+.gig-row:first-child{border-top:1px solid var(--rule)}
+.gig-row:hover{padding-left:8px}
+.gig-d{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;color:var(--ink3)}
+.gig-v{font-size:15px;color:var(--ink)}
+.gig-v small{font-size:12px;color:var(--ink3);margin-left:7px}
+.gbadge{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);border:1px solid var(--ruleT);padding:4px 12px;white-space:nowrap}
+
+/* ── RIDER ── */
+#rider{background:var(--bg)}
+.rider-g{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.r-block-title{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);margin-bottom:24px;display:flex;align-items:center;gap:14px}
+.r-block-title::after{content:'';flex:1;height:1px;background:var(--ruleT)}
+.ri{display:flex;gap:16px;padding:13px 0;border-bottom:1px solid var(--rule)}
+.ri:last-of-type{border:none}
+.ri-dot{width:4px;height:4px;border-radius:50%;background:var(--terra);margin-top:9px;flex-shrink:0;opacity:.6}
+.ri-t{font-size:14px;color:var(--ink2);line-height:1.65}
+.ri-t strong{color:var(--ink);font-weight:400}
+.r-note{margin-top:18px;padding:16px 20px;background:var(--bg2);border-left:2px solid var(--ruleT);font-size:12px;color:var(--ink3);font-style:italic}
+
+/* ── CONTACT ── */
+#contact{background:var(--bg3)}
+.contact-g{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.contact-head{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,64px);font-style:italic;font-weight:400;line-height:1.05;color:var(--ink);margin-bottom:14px}
+.contact-head em{color:var(--terra);font-style:normal}
+.contact-sub{font-size:14px;color:var(--ink3);max-width:300px;line-height:1.7}
+.crows{}
+.crow{display:flex;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid var(--rule);text-decoration:none;transition:padding-left .22s}
+.crow:first-child{border-top:1px solid var(--rule)}
+.crow:hover{padding-left:8px}
+.cicon{width:32px;height:32px;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--bg2);transition:all .2s}
+.crow:hover .cicon{border-color:var(--ruleT);background:var(--terra2)}
+.cicon svg{width:12px;height:12px;stroke:var(--ink3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.crow:hover .cicon svg{stroke:var(--terra)}
+.cl{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3);margin-bottom:2px}
+.cv{font-size:14px;color:var(--ink)}
+
+footer{padding:28px 0;border-top:1px solid var(--rule);background:var(--bg)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot .logo{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--ink3)}
+.foot span{font-size:10px;color:var(--ink3);letter-spacing:.06em}
+.foot .v{color:var(--terra);font-size:10px}
+
+@media(max-width:768px){
+  .w{padding:0 24px}
+  .bio-g,.rider-g,.contact-g{grid-template-columns:1fr;gap:40px}
+  .gig-row{grid-template-columns:1fr;gap:6px}
+}
+</style>
+</head>
+<body>
+
+<section id="hero">
+  <div class="h-top"><span>DJ Eljonai — Press Kit 2024</span><span>Amsterdam, NL</span></div>
+  <div class="h-bg-text">E</div>
+  <div class="h-content">
+    <div class="h-line"></div>
+    <div class="h-eyebrow">Deep House · Organic · Tech House</div>
+    <h1 class="h-name">Eljonai</h1>
+    <p class="h-tag">Lange sets vol warme grooves en hypnotische energy — altijd organisch, nooit voorspelbaar.</p>
+    <div class="h-meta">
+      <div class="h-mi"><label>Gevestigd</label><span>Amsterdam, NL</span></div>
+      <div class="h-mi"><label>Actief sinds</label><span>2019</span></div>
+      <div class="h-mi"><label>Booking</label><span>booking@eljonai.com</span></div>
+      <div class="h-mi"><label>Label</label><span>BRAAM Records</span></div>
+    </div>
+  </div>
+  <div class="h-scroll">Scroll</div>
+</section>
+
+<section id="bio">
+  <div class="w">
+    <div class="sh r"><span class="sh-n">— I</span><h2 class="sh-t">Biografie</h2></div>
+    <div class="sh-rule"></div>
+    <div class="bio-g">
+      <div class="r">
+        <p class="bio-p">Eljonai is een Amsterdamse DJ en producer die opgroeide tussen de kanalengordel en de bruisende club scenes van de stad. Haar sets bewegen moeiteloos tussen warme deep house grooves en hypnotische tech house energie — altijd met een organisch gevoel, nooit voorspelbaar.</p>
+        <blockquote class="bio-q">"Een set die begint als een wandeling en eindigt als een ritueel."</blockquote>
+        <p class="bio-p">Sinds 2019 speelt ze in clubs als Shelter, Thuishaven en Paradiso, waar ze support draaide voor Peggy Gou. In 2023 bracht ze haar debuut-EP <em>"Grondstof"</em> uit op BRAAM Records — drie tracks die samen 120.000+ streams haalden en haar naam definitief op de kaart zetten.</p>
+      </div>
+      <div class="r" style="transition-delay:.13s">
+        <div class="s-box">
+          <div class="s-box-title">Statistieken</div>
+          <div class="s-row"><label>Instagram</label><span>18.4<small>K</small></span></div>
+          <div class="s-row"><label>SoundCloud</label><span>9.2<small>K</small></span></div>
+          <div class="s-row"><label>EP Streams</label><span>120<small>K+</small></span></div>
+          <div class="s-row"><label>ADE</label><span>2<small>× edities</small></span></div>
+        </div>
+        <div class="genres-wrap s-box">
+          <div class="s-box-title">Genres</div>
+          <div class="gtags"><span class="gtag">Deep House</span><span class="gtag">Organic</span><span class="gtag">Tech House</span><span class="gtag">Afro House</span><span class="gtag">Melodic</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gigs">
+  <div class="w">
+    <div class="sh r"><span class="sh-n">— II</span><h2 class="sh-t">Live Historie</h2></div>
+    <div class="sh-rule"></div>
+    <div class="gig-list r">
+      <div class="gig-row"><span class="gig-d">Mrt 2024</span><span class="gig-v">Thuishaven<small>Amsterdam</small></span><span class="gbadge">Club</span></div>
+      <div class="gig-row"><span class="gig-d">Nov 2023</span><span class="gig-v">ADE — Amsterdam Dance Event<small>Amsterdam</small></span><span class="gbadge">Festival</span></div>
+      <div class="gig-row"><span class="gig-d">Sep 2023</span><span class="gig-v">BASIS<small>Rotterdam</small></span><span class="gbadge">Club</span></div>
+      <div class="gig-row"><span class="gig-d">Jul 2023</span><span class="gig-v">Paradigm Festival<small>Groningen</small></span><span class="gbadge">Festival</span></div>
+      <div class="gig-row"><span class="gig-d">Feb 2023</span><span class="gig-v">Paradiso — Support Peggy Gou<small>Amsterdam</small></span><span class="gbadge">Support</span></div>
+      <div class="gig-row"><span class="gig-d">Okt 2022</span><span class="gig-v">ADE — Amsterdam Dance Event<small>Amsterdam</small></span><span class="gbadge">Festival</span></div>
+      <div class="gig-row"><span class="gig-d">Jun 2022</span><span class="gig-v">Shelter<small>Amsterdam</small></span><span class="gbadge">Club</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="rider">
+  <div class="w">
+    <div class="sh r"><span class="sh-n">— III</span><h2 class="sh-t">Rider</h2></div>
+    <div class="sh-rule"></div>
+    <div class="rider-g">
+      <div class="r">
+        <div class="r-block-title">Technical Rider</div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t"><strong>2× CDJ-3000</strong> of gelijkwaardig (Pioneer-standaard)</div></div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t"><strong>1× DJM-900NXS2</strong> mixer</div></div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t"><strong>Monitor speaker</strong> op ooghoogte, DJ booth</div></div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t"><strong>Adequate monitoring</strong>, afgesteld vóór aanvang</div></div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t"><strong>Stabiele wifi</strong> (optioneel)</div></div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t"><strong>Goede verlichting</strong> op de booth</div></div>
+        <div class="r-note">Afwijkingen minimaal 72 uur van tevoren afstemmen met booking.</div>
+      </div>
+      <div class="r" style="transition-delay:.13s">
+        <div class="r-block-title">Hospitality Rider</div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t"><strong>1× hotelkamer</strong> (solo) bij gigs buiten Amsterdam</div></div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t"><strong>Reiskosten</strong> vergoed (OV of €0,23/km)</div></div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t">Backstage: <strong>rode wijn (1 fles)</strong> + <strong>bier (6×)</strong></div></div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t">Backstage: <strong>2× groot water</strong>, fruit &amp; snacks</div></div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t"><strong>Warme maaltijd</strong> bij gigs na 22:00</div></div>
+        <div class="ri"><div class="ri-dot"></div><div class="ri-t"><strong>Guestlist</strong>: 2 personen (48u vooraf)</div></div>
+        <div class="r-note">Alle afspraken worden schriftelijk vastgelegd in de performance agreement.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="w">
+    <div class="contact-g">
+      <div class="r">
+        <h2 class="contact-head">Boek<br><em>Eljonai</em></h2>
+        <p class="contact-sub">Voor bookings, persmateriaal en samenwerkingen — neem direct contact op.</p>
+      </div>
+      <div class="crows r" style="transition-delay:.13s">
+        <a class="crow" href="mailto:booking@eljonai.com"><div class="cicon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div><div><div class="cl">Booking</div><div class="cv">booking@eljonai.com</div></div></a>
+        <a class="crow" href="tel:+31612345678"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.18 19.79 19.79 0 01.21 5.5a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 11a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="cl">Telefoon</div><div class="cv">+31 6 12 34 56 78</div></div></a>
+        <a class="crow" href="#"><div class="cicon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="#8a847a" stroke="none"/></svg></div><div><div class="cl">Instagram</div><div class="cv">@eljonai · 18.4K</div></div></a>
+        <a class="crow" href="#"><div class="cicon"><svg viewBox="0 0 24 24"><path d="M3 15.5a2.5 2.5 0 005 0V8a1 1 0 011-1 7 7 0 017 7v1.5"/></svg></div><div><div class="cl">SoundCloud</div><div class="cv">/eljonai · 9.2K</div></div></a>
+        <a class="crow" href="#"><div class="cicon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><div><div class="cl">Resident Advisor</div><div class="cv">ra.co/eljonai</div></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="w"><div class="foot"><span class="logo">Eljonai</span><span>© 2024 DJ Eljonai — Alle rechten voorbehouden</span><span class="v">Press Kit v1.0</span></div></div></footer>
+
+<script>
+const els=document.querySelectorAll('.r');
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.07});
+els.forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight)el.classList.add('on');else io.observe(el)});
+</script>
+</body>
+</html>

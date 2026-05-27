@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DJ Eljonai — Press Kit Concepts</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#090907;color:#ccc6b8;font-family:'DM Sans',sans-serif;font-weight:300;font-size:14px;line-height:1.7;overflow-x:hidden}
+
+/* GRAIN */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.025;pointer-events:none;z-index:9999}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px}
+
+/* HEADER */
+header{padding:52px 0 40px;border-bottom:1px solid rgba(255,255,255,.07)}
+.header-inner{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+.header-left .label{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#c48b2a;margin-bottom:12px}
+.header-left h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,60px);font-weight:400;font-style:italic;color:#f0ebe0;line-height:1}
+.header-right{max-width:340px;text-align:right}
+.header-right p{font-size:13px;color:#6e6a5e;line-height:1.65}
+.header-right strong{color:#9a9488;font-weight:400}
+
+/* INTRO STRIP */
+.intro-strip{display:flex;align-items:center;gap:32px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.intro-strip span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#6e6a5e}
+.intro-strip .dot{width:4px;height:4px;border-radius:50%;background:#c48b2a;opacity:.5;flex-shrink:0}
+
+/* CONCEPTS GRID */
+.concepts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:40px 0 80px}
+
+/* CARD */
+.card{background:#0e0d09;border:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;overflow:hidden;transition:border-color .3s,transform .3s}
+.card:hover{border-color:rgba(196,139,42,.25);transform:translateY(-3px)}
+
+/* IFRAME PREVIEW */
+.preview{position:relative;height:340px;overflow:hidden;background:#0b0a07;cursor:pointer;flex-shrink:0}
+.preview iframe{position:absolute;top:0;left:0;width:1400px;height:1000px;transform:scale(0.286);transform-origin:top left;border:none;pointer-events:none}
+.preview-overlay{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;background:rgba(0,0,0,.45)}
+.card:hover .preview-overlay{opacity:1}
+.preview-overlay-btn{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#f0ebe0;border:1px solid rgba(240,235,224,.3);padding:10px 24px;background:rgba(0,0,0,.4);backdrop-filter:blur(4px)}
+.preview-label{position:absolute;bottom:0;left:0;right:0;padding:10px 16px;background:linear-gradient(to top,rgba(11,10,7,.9),transparent);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#6e6a5e;z-index:3}
+
+/* CARD BODY */
+.card-body{padding:24px;flex:1;display:flex;flex-direction:column;gap:16px}
+.card-num{font-family:'Cormorant Garamond',serif;font-size:11px;font-style:italic;color:#c48b2a;letter-spacing:.06em}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:#f0ebe0;line-height:1.1}
+.card-desc{font-size:12px;color:#6e6a5e;line-height:1.65;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.ctag{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#8a6119;border:1px solid rgba(138,97,25,.3);padding:3px 10px}
+.card-btn{display:block;text-align:center;padding:13px 20px;background:rgba(196,139,42,.06);border:1px solid rgba(196,139,42,.2);color:#c48b2a;text-decoration:none;font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-top:8px;transition:background .2s,border-color .2s}
+.card-btn:hover{background:rgba(196,139,42,.12);border-color:rgba(196,139,42,.4)}
+
+/* COMPARE NOTE */
+.compare-note{padding:32px 0;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.compare-note p{font-size:12px;color:#6e6a5e;max-width:500px;line-height:1.6}
+.compare-note p strong{color:#9a9488;font-weight:400}
+.compare-note .hint{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#c48b2a;display:flex;align-items:center;gap:10px}
+.compare-note .hint::before{content:'';display:block;width:24px;height:1px;background:#c48b2a}
+
+/* FOOTER */
+footer{padding:24px 0;border-top:1px solid rgba(255,255,255,.06)}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:10px;color:#4a453d;letter-spacing:.06em}
+.foot .logo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#6e6a5e}
+
+@media(max-width:900px){
+  .wrap{padding:0 24px}
+  .concepts{grid-template-columns:1fr;gap:20px}
+  .header-right{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <div class="label">Design Concepten</div>
+        <h1>DJ Eljonai<br>Press Kit</h1>
+      </div>
+      <div class="header-right">
+        <p>Drie design richtingen voor de digitale press kit. Kies de stijl die het beste aansluit bij je imago. Alle versies zijn <strong>compleet en klaar voor gebruik</strong> — bio, gigs, rider en contactinfo staan erin.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="intro-strip">
+    <span>Kies een richting</span>
+    <div class="dot"></div>
+    <span>Klik op een voorbeeld om de volledige versie te openen</span>
+    <div class="dot"></div>
+    <span>Alle info is aanpasbaar</span>
+  </div>
+
+  <div class="concepts">
+
+    <!-- CONCEPT 1: NOIR -->
+    <div class="card">
+      <div class="preview" onclick="window.open('eljonai-noir.html','_blank')">
+        <iframe src="eljonai-noir.html" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+        <div class="preview-overlay"><div class="preview-overlay-btn">Bekijk volledig</div></div>
+        <div class="preview-label">Concept 01 — Noir Editorial</div>
+      </div>
+      <div class="card-body">
+        <div class="card-num">Concept 01</div>
+        <div class="card-name">Noir Editorial</div>
+        <p class="card-desc">Donker en elegant. Warme amber accenten op near-black. Cormorant Garamond serif typography. Voelt als een high-end club magazine — sophisticated zonder te overdrijven.</p>
+        <div class="card-tags">
+          <span class="ctag">Donker</span>
+          <span class="ctag">Amber / Goud</span>
+          <span class="ctag">Editorial</span>
+          <span class="ctag">Luxury Underground</span>
+        </div>
+        <a class="card-btn" href="eljonai-noir.html" target="_blank">Openen ↗</a>
+      </div>
+    </div>
+
+    <!-- CONCEPT 2: VOLTAGE -->
+    <div class="card">
+      <div class="preview" onclick="window.open('eljonai-voltage.html','_blank')">
+        <iframe src="eljonai-voltage.html" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+        <div class="preview-overlay"><div class="preview-overlay-btn">Bekijk volledig</div></div>
+        <div class="preview-label">Concept 02 — Voltage</div>
+      </div>
+      <div class="card-body">
+        <div class="card-num">Concept 02</div>
+        <div class="card-name">Voltage</div>
+        <p class="card-desc">Raw en agressief. Zwart met elektrisch rood. Bebas Neue condensed type, Space Mono voor details. Denk Berlin/Rotterdam underground — maximale energie, nul compromis.</p>
+        <div class="card-tags">
+          <span class="ctag">Donker</span>
+          <span class="ctag">Rood</span>
+          <span class="ctag">Brutalist</span>
+          <span class="ctag">Underground</span>
+        </div>
+        <a class="card-btn" href="eljonai-voltage.html" target="_blank">Openen ↗</a>
+      </div>
+    </div>
+
+    <!-- CONCEPT 3: LUXE -->
+    <div class="card">
+      <div class="preview" onclick="window.open('eljonai-luxe.html','_blank')">
+        <iframe src="eljonai-luxe.html" tabindex="-1" aria-hidden="true" loading="lazy"></iframe>
+        <div class="preview-overlay"><div class="preview-overlay-btn">Bekijk volledig</div></div>
+        <div class="preview-label">Concept 03 — Luxe</div>
+      </div>
+      <div class="card-body">
+        <div class="card-num">Concept 03</div>
+        <div class="card-name">Luxe</div>
+        <p class="card-desc">Warm en verfijnd. Crème achtergrond met terracotta accenten. Playfair Display serif. Voelt als een boutique label of high-end festival — perfect voor een professioneel, toegankelijk imago.</p>
+        <div class="card-tags">
+          <span class="ctag">Licht</span>
+          <span class="ctag">Crème / Terracotta</span>
+          <span class="ctag">Elegant</span>
+          <span class="ctag">Premium</span>
+        </div>
+        <a class="card-btn" href="eljonai-luxe.html" target="_blank">Openen ↗</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="compare-note">
+    <p>Alle drie concepten bevatten dezelfde content: <strong>biografie, statistieken, live historie, technische rider, hospitality rider en contactgegevens.</strong> Na het kiezen van een richting kunnen teksten, foto's en kleuren worden aangepast.</p>
+    <div class="hint">Persmateriaal toevoegen op aanvraag</div>
+  </div>
+
+</div>
+
+<footer><div class="wrap"><div class="foot"><span class="logo">Eljonai</span><span>Press Kit Design Concepts — 2024</span><span>3 concepts · alle versies compleet</span></div></div></footer>
+
+</body>
+</html>
