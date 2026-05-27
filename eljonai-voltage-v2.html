@@ -28,9 +28,9 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .h-sub-item span{font-size:13px;color:#ffffff}
 
 /* RIGHT — DUAL PHOTO PANEL */
-.h-right{display:grid;grid-template-rows:62% 38%;overflow:hidden;border-left:3px solid var(--red)}
+.h-right{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-left:3px solid var(--red)}
 .h-photo{position:relative;overflow:hidden;background:#0a0808}
-.h-photo img{width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.05) brightness(.88);transition:transform .6s ease}
+.h-photo img{width:100%;height:100%;object-fit:cover;object-position:center;filter:contrast(1.05) brightness(.95);transition:transform .6s ease}
 .h-photo:hover img{transform:scale(1.03)}
 .h-photo::after{content:'';position:absolute;inset:0;background:rgba(232,25,25,.05)}
 .h-photo-label{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(to top,rgba(6,6,6,.88),transparent);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--w3)}
@@ -72,7 +72,7 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .gig-table td:first-child{padding-left:0;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--red);letter-spacing:.04em;width:160px}
 .gig-table td.venue{color:var(--w);font-size:13px}
 .gig-table td.city{color:var(--w3);font-size:11px;text-align:right;padding-right:0}
-.gbadge{display:inline-block;font-size:9px;letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(232,25,25,.35);color:var(--red);padding:3px 10px}
+.gbadge{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:rgba(232,25,25,.18);border:1px solid rgba(232,25,25,.5);color:#ffffff;padding:4px 12px}
 
 /* ── RIDER ── */
 #rider{padding:0 0 80px}

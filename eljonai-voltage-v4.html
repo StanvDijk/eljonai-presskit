@@ -2,10 +2,10 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DJ Eljonai — Voltage V3</title>
+<title>DJ Eljonai — Voltage V4</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#060606;--red:#e81919;--red2:rgba(232,25,25,.12);--w:#ffffff;--w2:#e0e0e0;--w3:#999999;--rule:rgba(255,255,255,.10)}
+:root{--bg:#060606;--red:#e81919;--red2:rgba(232,25,25,.14);--w:#ffffff;--w2:#e8e8e8;--w3:#aaaaaa;--rule:rgba(255,255,255,.12)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--w);font-family:'Space Mono',monospace;font-size:13px;line-height:1.7;overflow-x:hidden}
@@ -13,26 +13,31 @@ body{background:var(--bg);color:var(--w);font-family:'Space Mono',monospace;font
 section{padding:80px 0}
 body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.03) 2px,rgba(0,0,0,.03) 4px);pointer-events:none;z-index:9999}
 
-/* ── HERO — FULL CROWD SHOT ── */
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;padding:0}
-.h-bg{position:absolute;inset:0}
-.h-bg img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.75) contrast(1.05)}
-.h-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 25%,rgba(6,6,6,.3) 50%,rgba(6,6,6,.92) 85%)}
-.h-topbar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;z-index:10}
-.h-topbar span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75)}
-.h-content{position:relative;z-index:5;padding:0 48px 56px}
-.h-eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:14px;display:flex;align-items:center;gap:14px}
-.h-eyebrow::before{content:'';width:30px;height:2px;background:var(--red)}
-.h-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(88px,14vw,200px);line-height:.85;letter-spacing:.02em;color:var(--w);margin-bottom:0}
-.h-name .mid{color:transparent;-webkit-text-stroke:1px var(--w)}
-.red-rule{height:3px;background:var(--red);margin:20px 0;box-shadow:0 0 24px rgba(232,25,25,.6)}
-.h-meta{display:flex;gap:0;flex-wrap:wrap}
-.h-mi{padding:10px 32px 10px 0;border-right:1px solid rgba(255,255,255,.12);margin-right:32px}
-.h-mi:last-child{border:none;margin:0}
-.h-mi label{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#ff5555;margin-bottom:3px}
-.h-mi span{font-size:13px;color:#ffffff}
-.h-corner{position:absolute;bottom:32px;right:48px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#cccccc;display:flex;align-items:center;gap:10px;z-index:10}
-.h-corner::before{content:'';display:block;width:30px;height:1px;background:var(--red)}
+/* ── HERO — DJ NAME + BIG PHOTO ── */
+#hero{height:100vh;min-height:640px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative}
+
+.h-left{display:flex;flex-direction:column;justify-content:space-between;padding:32px 48px;background:var(--bg);position:relative;z-index:2;border-right:3px solid var(--red)}
+
+.h-topbar{display:flex;justify-content:space-between;align-items:center}
+.h-topbar span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#cccccc}
+
+.h-name-block{flex:1;display:flex;flex-direction:column;justify-content:center;gap:0}
+.h-dj{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,72px);letter-spacing:.08em;color:var(--red);line-height:1;margin-bottom:-8px}
+.h-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,9.5vw,140px);line-height:.88;letter-spacing:.01em;color:var(--w)}
+.red-rule{height:3px;background:var(--red);width:100%;margin:20px 0;box-shadow:0 0 20px rgba(232,25,25,.55)}
+.h-tagline{font-size:16px;color:var(--w2);line-height:1.5;margin-bottom:20px;max-width:320px}
+
+.h-meta{display:flex;flex-direction:column;gap:0}
+.h-mi{display:flex;align-items:baseline;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--rule)}
+.h-mi:last-child{border:none}
+.h-mi label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#aaaaaa}
+.h-mi span{font-size:13px;color:#ffffff;text-align:right}
+
+/* RIGHT — PHOTO PANEL */
+.h-right{position:relative;overflow:hidden;background:#0a0808}
+.h-right img{width:100%;height:100%;object-fit:cover;object-position:60% center;filter:brightness(.9) contrast(1.05)}
+.h-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(6,6,6,.25) 0%,transparent 40%)}
+.h-photo-credit{position:absolute;bottom:20px;right:20px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 
 /* ── DIVIDER ── */
 .divider{display:flex;align-items:center;gap:0;border-top:1px solid var(--rule)}
@@ -43,26 +48,21 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .r{opacity:0;transform:translateX(-16px);transition:opacity .6s ease,transform .6s ease}
 .r.on{opacity:1;transform:none}
 
-/* ── BIO — WITH PORTRAIT PHOTO ── */
+/* ── BIO ── */
 #bio{padding:0 0 80px}
 .bio-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding:56px 0 0}
-.bio-text p{font-size:13px;line-height:1.85;color:var(--w2);margin-bottom:16px}
+.bio-text p{font-size:14px;line-height:1.85;color:var(--w2);margin-bottom:16px}
 .bio-text p:last-child{margin:0}
 .bio-text strong{color:var(--w)}
 .bio-big-q{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3.5vw,44px);line-height:1.1;color:var(--w);letter-spacing:.03em;border-left:3px solid var(--red);padding-left:24px;margin:32px 0}
-.bio-right{display:flex;flex-direction:column;gap:24px}
-.bio-photo-wrap{position:relative;overflow:hidden;flex:1;min-height:300px;max-height:420px}
-.bio-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(.9)}
-.bio-photo-wrap::after{content:'';position:absolute;inset:0;background:rgba(232,25,25,.04)}
-.bio-photo-label{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(to top,rgba(6,6,6,.88),transparent);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--w3)}
 .stat-list{display:flex;flex-direction:column}
-.stat-li{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule)}
+.stat-li{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--rule)}
 .stat-li:first-child{border-top:1px solid var(--rule)}
-.stat-li .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--w3)}
-.stat-li .v{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--w);letter-spacing:.04em}
-.stat-li .v small{font-family:'Space Mono',monospace;font-size:10px;color:var(--w3);margin-left:4px}
-.genre-bar{margin-top:20px;display:flex;flex-wrap:wrap;gap:6px}
-.gtag{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);border:1px solid rgba(232,25,25,.3);padding:4px 12px}
+.stat-li .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#cccccc}
+.stat-li .v{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--w);letter-spacing:.04em}
+.stat-li .v small{font-family:'Space Mono',monospace;font-size:12px;color:#999;margin-left:4px}
+.genre-bar{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px}
+.gtag{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#ffffff;background:rgba(232,25,25,.15);border:1px solid rgba(232,25,25,.45);padding:5px 14px}
 
 /* ── GIGS ── */
 #gigs{padding:0 0 80px}
@@ -70,82 +70,82 @@ body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradie
 .gig-table tr{border-bottom:1px solid var(--rule);cursor:default;transition:background .2s}
 .gig-table tr:first-child{border-top:1px solid var(--rule)}
 .gig-table tr:hover{background:rgba(232,25,25,.04)}
-.gig-table td{padding:18px 12px;font-size:12px;vertical-align:middle}
+.gig-table td{padding:18px 12px;font-size:13px;vertical-align:middle}
 .gig-table td:first-child{padding-left:0;font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--red);letter-spacing:.04em;width:160px}
-.gig-table td.venue{color:var(--w);font-size:13px}
-.gig-table td.city{color:var(--w3);font-size:11px;text-align:right;padding-right:0}
-.gbadge{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:rgba(232,25,25,.18);border:1px solid rgba(232,25,25,.5);color:#ffffff;padding:4px 12px}
+.gig-table td.venue{color:var(--w);font-size:14px}
+.gig-table td.city{color:#bbbbbb;font-size:12px;text-align:right;padding-right:0}
+.gbadge{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:rgba(232,25,25,.18);border:1px solid rgba(232,25,25,.5);color:#ffffff;padding:4px 12px;margin-right:6px}
 
 /* ── RIDER ── */
 #rider{padding:0 0 80px}
 .rider-cols{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:40px}
-.r-head{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--red);display:flex;align-items:center;gap:12px}
-.r-head::before{content:'■';font-size:7px}
-.r-item{display:flex;gap:16px;padding:11px 0;border-bottom:1px solid var(--rule)}
+.r-head{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#ffffff;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--red)}
+.r-item{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule)}
 .r-item:last-of-type{border:none}
-.r-num{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--red);min-width:24px;line-height:1.2}
-.r-txt{font-size:12px;color:var(--w2);line-height:1.6}
+.r-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--red);min-width:28px;line-height:1.2}
+.r-txt{font-size:13px;color:var(--w2);line-height:1.6}
 .r-txt strong{color:var(--w);font-weight:700}
-.r-note{margin-top:16px;padding:14px 16px;border-left:2px solid var(--red);background:var(--red2);font-size:11px;color:var(--w3);font-style:italic}
+.r-note{margin-top:16px;padding:14px 18px;border-left:3px solid var(--red);background:var(--red2);font-size:12px;color:#cccccc;font-style:italic}
 
 /* ── CONTACT ── */
 #contact{padding:0 0 80px}
 .contact-wrap{padding-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-.contact-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,8vw,110px);line-height:.9;letter-spacing:.02em;color:var(--w);margin-bottom:16px}
+.contact-big{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,90px);line-height:.9;letter-spacing:.02em;color:var(--w);margin-bottom:16px}
 .contact-big em{color:var(--red);font-style:normal}
-.contact-sub{font-size:11px;color:var(--w3);line-height:1.7;max-width:280px}
+.contact-sub{font-size:13px;color:#aaaaaa;line-height:1.7;max-width:280px}
 .clink{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);text-decoration:none;transition:padding-left .2s}
 .clink:first-child{border-top:1px solid var(--rule)}
 .clink:hover{padding-left:10px}
 .clink:hover .cicon{border-color:var(--red);background:var(--red2)}
-.cicon{width:32px;height:32px;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
-.cicon svg{width:12px;height:12px;stroke:var(--w3);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cicon{width:36px;height:36px;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.cicon svg{width:14px;height:14px;stroke:#999;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .clink:hover .cicon svg{stroke:var(--red)}
-.c-l{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--w3);margin-bottom:2px}
-.c-v{font-size:13px;color:var(--w)}
+.c-l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#999;margin-bottom:3px}
+.c-v{font-size:14px;color:var(--w)}
 
 footer{padding:24px 0;border-top:1px solid var(--rule)}
-.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:10px;color:var(--w3);letter-spacing:.08em}
-.foot .logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em;color:var(--w)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:11px;color:#666;letter-spacing:.08em}
+.foot .logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;color:var(--w)}
 
-@media(max-width:768px){
+@media(max-width:900px){
+  #hero{grid-template-columns:1fr;height:auto;min-height:100vh}
+  .h-right{height:60vw;border-top:3px solid var(--red)}
+  .h-left{border-right:none;padding:24px}
   .wrap{padding:0 24px}
   .bio-inner,.rider-cols,.contact-wrap{grid-template-columns:1fr;gap:40px}
-  .h-name{font-size:22vw}
-  .h-topbar,.h-corner{padding-left:24px;padding-right:24px}
-  .h-content{padding:0 24px 48px}
+  .h-name{font-size:20vw}
 }
 </style>
 </head>
 <body>
 
-<!-- HERO — crowd shot from the booth looking out -->
 <section id="hero">
-  <div class="h-bg">
-    <img src="cover3.jpg" alt="Eljonai — dancefloor view">
-  </div>
-  <div class="h-topbar">
-    <span>DJ Eljonai — Press Kit 2026</span>
-    <span>Amsterdam · NL</span>
-  </div>
-  <div class="h-content">
-    <div class="h-eyebrow">Deep House · Organic · Tech House</div>
-    <div class="h-name">
-      <div>EL</div>
-      <div class="mid">JO</div>
-      <div>NAI</div>
+  <div class="h-left">
+    <div class="h-topbar">
+      <span>Press Kit 2026</span>
+      <span>Amsterdam · NL</span>
     </div>
-    <div class="red-rule"></div>
-    <div class="h-meta">
-      <div class="h-mi"><label>Gevestigd</label><span>Amsterdam, NL</span></div>
-      <div class="h-mi"><label>Actief</label><span>2019 — heden</span></div>
-      <div class="h-mi"><label>Booking</label><span>booking@eljonai.com</span></div>
+    <div class="h-name-block">
+      <div class="h-dj">DJ</div>
+      <div class="h-name">ELJONAI</div>
+      <div class="red-rule"></div>
+      <p class="h-tagline">Lange sets. Warme grooves.<br>Een dansvloer die niet meer wil stoppen.</p>
+      <div class="h-meta">
+        <div class="h-mi"><label>Genre</label><span>Deep House / Organic / Tech</span></div>
+        <div class="h-mi"><label>Gevestigd</label><span>Amsterdam, NL</span></div>
+        <div class="h-mi"><label>Actief</label><span>2019 — heden</span></div>
+        <div class="h-mi"><label>Booking</label><span>booking@eljonai.com</span></div>
+      </div>
     </div>
+    <div></div>
   </div>
-  <div class="h-corner">Scroll om meer te lezen</div>
+  <div class="h-right">
+    <img src="cover2.jpg" alt="DJ Eljonai live">
+    <div class="h-photo-credit">Live — Amsterdam</div>
+  </div>
 </section>
 
-<!-- BIO — portrait photo in right column -->
+<!-- BIO -->
 <div class="divider"><div class="div-num">01</div><div class="div-title">Biografie</div></div>
 <section id="bio">
   <div class="wrap">
@@ -154,21 +154,17 @@ footer{padding:24px 0;border-top:1px solid var(--rule)}
         <p>Eljonai is een Amsterdamse DJ en producer die opgroeide tussen de kanalengordel en de bruisende club scenes van de stad. Zijn sets bewegen moeiteloos tussen warme deep house grooves en hypnotische tech house energie — altijd met een organisch gevoel, nooit voorspelbaar.</p>
         <blockquote class="bio-big-q">LANGE SETS. WARME GROOVES. NIEMAND WILT STOPPEN.</blockquote>
         <p>Sinds 2019 speelt hij in clubs als Shelter, Thuishaven en Paradiso, waar hij support draaide voor Peggy Gou. In 2023 bracht hij zijn debuut-EP <strong>"Grondstof"</strong> uit op BRAAM Records — drie tracks die samen 120.000+ streams haalden.</p>
-        <div class="genre-bar" style="margin-top:28px">
-          <span class="gtag">Deep House</span><span class="gtag">Organic House</span><span class="gtag">Tech House</span><span class="gtag">Afro House</span><span class="gtag">Melodic</span>
-        </div>
       </div>
-      <div class="bio-right r" style="transition-delay:.12s">
-        <div class="bio-photo-wrap">
-          <img src="cover2.jpg" alt="Eljonai live — arm raised">
-          <div class="bio-photo-label">Live — crowd energy</div>
-        </div>
+      <div class="r" style="transition-delay:.12s">
         <div class="stat-list">
-          <div class="stat-li"><span class="k">Instagram</span><span class="v">18.4<small>K</small></span></div>
-          <div class="stat-li"><span class="k">SoundCloud</span><span class="v">9.2<small>K</small></span></div>
+          <div class="stat-li"><span class="k">Instagram</span><span class="v">18.4<small>K volgers</small></span></div>
+          <div class="stat-li"><span class="k">SoundCloud</span><span class="v">9.2<small>K volgers</small></span></div>
           <div class="stat-li"><span class="k">EP Streams</span><span class="v">120<small>K+</small></span></div>
           <div class="stat-li"><span class="k">ADE Edities</span><span class="v">2<small>×</small></span></div>
-          <div class="stat-li"><span class="k">Label</span><span class="v" style="font-size:16px">BRAAM REC.</span></div>
+          <div class="stat-li"><span class="k">Label</span><span class="v" style="font-size:18px">BRAAM REC.</span></div>
+        </div>
+        <div class="genre-bar">
+          <span class="gtag">Deep House</span><span class="gtag">Organic House</span><span class="gtag">Tech House</span><span class="gtag">Afro House</span><span class="gtag">Melodic</span>
         </div>
       </div>
     </div>
@@ -202,7 +198,7 @@ footer{padding:24px 0;border-top:1px solid var(--rule)}
         <div class="r-item"><div class="r-num">02</div><div class="r-txt"><strong>1× DJM-900NXS2</strong> mixer</div></div>
         <div class="r-item"><div class="r-num">03</div><div class="r-txt"><strong>Monitor speaker</strong> op ooghoogte DJ booth</div></div>
         <div class="r-item"><div class="r-num">04</div><div class="r-txt"><strong>Adequate monitoring</strong>, afgesteld vóór aanvang</div></div>
-        <div class="r-item"><div class="r-num">05</div><div class="r-txt"><strong>Stabiele wifi</strong> (optioneel)</div></div>
+        <div class="r-item"><div class="r-num">05</div><div class="r-txt"><strong>Stabiele wifi</strong> (optioneel, streaming)</div></div>
         <div class="r-item"><div class="r-num">06</div><div class="r-txt"><strong>Goede verlichting</strong> op de booth</div></div>
         <div class="r-note">Afwijkingen minimaal 72 uur van tevoren bespreken met booking.</div>
       </div>
@@ -240,7 +236,7 @@ footer{padding:24px 0;border-top:1px solid var(--rule)}
   </div>
 </section>
 
-<footer><div class="wrap"><div class="foot"><span class="logo">ELJONAI</span><span>© 2026 DJ Eljonai — Alle rechten voorbehouden</span><span style="color:var(--red)">PRESS KIT v1.0</span></div></div></footer>
+<footer><div class="wrap"><div class="foot"><span class="logo">DJ ELJONAI</span><span>© 2026 DJ Eljonai — Alle rechten voorbehouden</span><span style="color:var(--red)">PRESS KIT v1.0</span></div></div></footer>
 
 <script>
 const els=document.querySelectorAll('.r');
