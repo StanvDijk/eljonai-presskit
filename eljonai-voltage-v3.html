@@ -109,11 +109,26 @@ footer{padding:24px 0;border-top:1px solid var(--rule)}
 .foot .logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em;color:var(--w)}
 
 @media print{
-  @page{margin:0}
+  @page{margin:0;background:#060606}
   *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important}
+  html{background:#060606 !important}
+  body{background:#060606 !important}
   body::after{display:none}
+  body::before{content:'';position:fixed;inset:0;background:#060606;z-index:-1}
   .h-corner{display:none}
-  #hero{min-height:100vh;page-break-after:always}
+  .red-rule{box-shadow:none !important;height:2px !important}
+  .r{opacity:1 !important;transform:none !important}
+  #hero{min-height:100vh;page-break-after:always;break-after:page}
+  .divider{page-break-after:avoid;break-after:avoid;page-break-inside:avoid;break-inside:avoid}
+  .bio-inner{grid-template-columns:1fr !important;gap:32px !important}
+  .bio-photo-wrap{max-height:280px !important;min-height:0 !important}
+  .rider-cols{page-break-inside:avoid;break-inside:avoid}
+  .contact-wrap{page-break-inside:avoid;break-inside:avoid}
+  div,section,header,footer,table,tr,td{background-color:#060606 !important}
+  img,#hero .h-bg img{background-color:transparent !important}
+  .gtag{background:rgba(232,25,25,.15) !important}
+  .gbadge{background:rgba(232,25,25,.18) !important}
+  .r-note,.bio-photo-wrap::after{background:rgba(232,25,25,.12) !important}
 }
 
 @media(max-width:768px){
