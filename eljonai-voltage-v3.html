@@ -108,6 +108,13 @@ footer{padding:24px 0;border-top:1px solid var(--rule)}
 .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:10px;color:var(--w3);letter-spacing:.08em}
 .foot .logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em;color:var(--w)}
 
+@media print{
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important}
+  body::after{display:none}
+  .h-corner{display:none}
+  #hero{min-height:100vh;page-break-after:always}
+}
+
 @media(max-width:768px){
   .wrap{padding:0 24px}
   .bio-inner,.rider-cols,.contact-wrap{grid-template-columns:1fr;gap:40px}
