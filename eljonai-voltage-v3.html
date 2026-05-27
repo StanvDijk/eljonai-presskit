@@ -109,7 +109,7 @@ footer{padding:24px 0;border-top:1px solid var(--rule)}
 .foot .logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em;color:var(--w)}
 
 @media print{
-  @page{margin:0;background:#060606}
+  @page{margin:12mm 0;background:#060606}
   *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;color-adjust:exact !important}
   html{background:#060606 !important}
   body{background:#060606 !important}
@@ -120,8 +120,11 @@ footer{padding:24px 0;border-top:1px solid var(--rule)}
   .r{opacity:1 !important;transform:none !important}
   #hero{min-height:100vh;page-break-after:always;break-after:page}
   .divider{page-break-after:avoid;break-after:avoid;page-break-inside:avoid;break-inside:avoid}
-  .bio-inner{grid-template-columns:1fr !important;gap:32px !important}
-  .bio-photo-wrap{max-height:280px !important;min-height:0 !important}
+  .bio-inner{grid-template-columns:1fr !important;gap:24px !important;padding-top:16px !important}
+  #bio{padding-bottom:40px !important}
+  .bio-photo-wrap{max-height:200px !important;min-height:0 !important}
+  .stat-list{page-break-inside:avoid;break-inside:avoid}
+  #hero{height:100vh !important;min-height:unset !important}
   .rider-cols{page-break-inside:avoid;break-inside:avoid}
   .contact-wrap{page-break-inside:avoid;break-inside:avoid}
   div,section,header,footer,table,tr,td{background-color:#060606 !important}
